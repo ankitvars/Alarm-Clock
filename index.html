@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+
+    <!-- linking the style sheet or css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon display in browser tab -->
+    <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
+
+    <!-- CSS framework Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-dark m-0 p-0">
+    <!--title code of the page -->
+    <div class="title mt-3 d-flex justify-content-center align-items-center">
+        <h1 class="font-monospace text-light fs-1 "> ALARM CLOCK ⏱ </h1>
+    </div>
+
+    <!-- main section of the page -->
+    <section class="container d-flex flex-column justify-content-center align-items-center">
+        <div class="bg-light mb-4 text-dark" id="clock"></div>
+        <form class="setAlarm">
+            <!-- alarm heading code -->
+            <label class="alarm-heading mb-3"">
+                <h4 class=" heading bg-secondary p-2">
+                Set Alarm (24-Hour Clock)
+                </h4>
+            </label>
+            <br>
+            <!-- set alarm code for time user want -->
+            <div class="set-alarm-field  d-flex justify-content-center align-items-center">
+                <input type="number" name="a_hour" id="a_hour" placeholder="HH" max="23" min="00" class="fs-6 m-2 p-2">
+                <input type="number" name="a_min" id="a_min" placeholder="MM" max="59" min="00" class="fs-6 m-2 p-2">
+                <input type="number" name="a_sec" id="a_sec" placeholder="SS" max="59" min="00" class="fs-6 m-2 p-2">
+            </div>
+            <!-- buttons to set alarm on specific time and stop when it's buzzing  -->
+            <div class="controls mt-xl-3">
+                <button class="btn set-alarm bg-success fs-4 fw-bold border-0 text-light mb-0" type="submit"
+                    onclick="addAlarm">
+                    Set Alarm
+                </button>
+                <button class="btn clear-alarm bg-danger fs-4 fw-bold border-0 text-light mb-0" onclick="clearAlarm()"
+                    type="reset">
+                    Stop Alarm
+                </button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Upcoming Alarms Code  -->
+    <section class="d-flex flex-column justify-content-center align-items-center ">
+        <label>
+            <h3 class="alarm-heading bg-warning p-2 mt-0">Upcoming Alarms</h3>
+        </label>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <!-- Upcoming alarm will be displayed using list item -->
+            <ul id="myList"
+                class=" list-unstyled bg-light d-flex flex-column justify-content-center align-items-center">
+                <!-- <li class="list-item  bg-light fs-5 p-1">
+                    Sample Alarm
+                </li> -->
+            </ul>
+        </div>
+    </section>
+
+
+    <script src="./index.js"></script>
+</body>
+
+</html>

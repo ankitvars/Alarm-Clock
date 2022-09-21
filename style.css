@@ -1,0 +1,31 @@
+*{
+    box-sizing: border-box;
+}
+/* clock container style to set precise width and font size */
+#clock{
+    width: 300px;
+    font-size: 60px;
+    border-radius: 10px;
+    padding-bottom:0px;
+}
+/* main section container style  */
+.container{
+    height: 400px;
+}
+
+.myList{
+    width: 300px;
+    height: 100px;
+}
+/* giving border radius to different elements  */
+.heading,.alarm-heading{
+    border-radius: 5px;
+}
+
+ul,li {
+    border-radius: 3px;
+}
+
+li button.deleteAlarm{
+    border-radius: 5px;
+}
